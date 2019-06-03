@@ -1,0 +1,16 @@
+{
+  "name": "theme",
+  "version": "1.0.0",
+  "description": "Live demo",
+  "keywords": [],
+  "homepage": "https://codesandbox.io/s/4j7m47vlm4",
+  "main": "index.js",
+  "dependencies": {
+    "@material-ui/core": "3.9.3",
+    "@material-ui/icons": "1.0.0",
+    "material-ui": "0.20.1",
+    "prop-types": "15.6.1",
+    "react": "latest",
+    "react-dom": "latest"
+  }
+}
