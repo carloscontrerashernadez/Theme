@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import Switch from "@material-ui/core/Switch";
-import Menu from "/components/menu";
+import Menu from "/src/components/menu";
 
 import { fade } from "@material-ui/core/styles/colorManipulator";
 
