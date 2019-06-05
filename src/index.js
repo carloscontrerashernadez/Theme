@@ -21,17 +21,17 @@ class App extends Component {
       themeType: "dark",
       dark: {
         primary: { main: primaryColor },
-        secondary: { main: "#ff514d" },
-        mainGradient: "linear-gradient(225deg, #0000010, #333333)",
-        invGradient: "linear-gradient(180deg, black, #333333)",
+        secondary: { main: colorRed },
+        mainGradient: "linear-gradient(225deg, #222222, #333333)",
+        invGradient: "linear-gradient(180deg, #222222, #333333)",
         contraster: "#ffffff",
-        paperBG: "#333333"
+        paperBG: "#222222"
       },
       light: {
         primary: { main: primaryColor },
-        secondary: { main: "#ff514d" },
-        mainGradient: "linear-gradient(45deg, white, #e6e6e6)",
-        invGradient: "linear-gradient(0deg, white, #e6e6e6)",
+        secondary: { main: colorRed },
+        mainGradient: "linear-gradient(45deg, white, #f2f2f2)",
+        invGradient: "linear-gradient(0deg, white, #f2f2f2)",
         contraster: "#000000",
         paperBG: "#f2f2f2"
       },
@@ -64,12 +64,16 @@ class App extends Component {
               : this.state.dark.mainGradient,
           invGradient:
             this.state.themeType === "light"
-              ? this.state.light.mainGradient
-              : this.state.dark.mainGradient,
+              ? this.state.light.invGradient
+              : this.state.dark.invGradient,
           contraster:
             this.state.themeType === "light"
               ? this.state.light.contraster
-              : this.state.dark.contraster
+              : this.state.dark.contraster,
+          paperBG:
+            this.state.themeType === "light"
+              ? this.state.light.paperBG
+              : this.state.dark.paperBG
         },
         secondary: {
           main: colorRed
@@ -88,6 +92,10 @@ class App extends Component {
 
         MuiAppBar: {
           root: {
+            background:
+              this.state.themeType === "light"
+                ? this.state.light.mainGradient
+                : this.state.dark.mainGradient,
             border: "none",
             boxShadow: "none !important"
           }
@@ -131,7 +139,7 @@ class App extends Component {
             boxShadow:
               "0px 0px 25px 0px " + fade(colorBlack, 0.2) + "!important",
 
-            backgroundColor:
+            background:
               this.state.themeType === "light"
                 ? this.state.light.mainGradient + " !important"
                 : this.state.dark.mainGradient + " !important"

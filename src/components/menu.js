@@ -22,7 +22,6 @@ import { EnvironmentsIcon } from "../theme/icons.js";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
-
 import CardMedia from "@material-ui/core/CardMedia";
 
 const drawerWidth = 240;
@@ -195,24 +194,16 @@ const styles = theme => ({
   },
   logo: {
     width: "100%",
-    //height: "100%",
-    "& div:nth-of-type(1)": {
-      height: "72px",
-      width: "72px",
+    textAlign: "right",
 
-      display: "inline-block",
-      backgroundSize: "60%",
-      backgroundRepeat: "no-repeat",
-      backgroundPosition: "50% 50%"
+    "&>svg": {
+      width: "auto",
+      height: "2.5em",
+      float: "right",
+      margin: ".5em 1.25em"
     },
-
-    "& div:nth-of-type(2)": {
-      height: "72px",
-      width: "6.5em",
-      display: "inline-block",
-      backgroundSize: "contain",
-      backgroundRepeat: "no-repeat",
-      backgroundPosition: "50% 50%"
+    "& #Layer_2": {
+      fill: theme.palette.primary.contraster
     }
   }
 });
@@ -336,17 +327,41 @@ class MiniDrawer extends React.Component {
               </IconButton>
             </div>
             <div className={classes.logo}>
-              <CardMedia
-                className={classes.media}
-                image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG8AAABkCAQAAAAiC6YoAAAEh0lEQVR42u2cW8GtKhCAjUAEIhjBCEYgghGIQAQiGIEIRjCCDWY//OffywuXGRgUz16st6WCH3NlUDvoKv96sLCBPv1rYQMDsvbodbuX4OCnudOR9b//bV3EmnAT7NsR+9M2UG/Es3Bsw+6YOh0zb8M7wwFMu6PmctS+Ce8KdwRwnuP6LXgT+NreuWzeM4Y34MnAzX+ciwgcX0G0j2ch1H5DwBA8Q7eOJyHchoDf3AcJ0TaejuApxDlD23hj5NZ1MCy8Bm9A4LnIOeK9eDMCr3nPGW7u38CDL94X74v3xaNWVv7XeMMXb3lvUqYLw/qL8QwCb2obzyFS6hkxBY3irQg8jAI3igcIu4rhbS3jDSi8+FmyXTyNiml99KyxXbyY01iRKmzaxduQTiMW2JdW8eI2pVG1UGbr48QzaJuaomeqNvFWtEzicp5bxIv7w5UQHxnLgXeppiUkb4zqeZdqKtQmGXtqdkfx3ecNe+L5D+PN0ZtdyNI2LeHJhCwm0j4g41ZY7S3LsKqNGVPyCJ6IJmPhNGsjhZLH8HSmHEziOtUCnkxIIewFU96T4VGC+nYXS7GWxLX6abyUBOKlPZW4tth/1qyMYRxESrHtk3gqKTtV6JYKC7s1AwLGuaf7WJ7Cm5Mzj3ENhqUXdrwxeVs4x5CWX4GC1ot2+LCctr/sCJiLtyBuic+GswsUdUI5tRw7Ifqb7sJTiJtx7NqQVb/mrmb+OhVZpde+Nl6PsJM8V25qTFsNuCUzSVhRfYtaeDi4DBUiKCgRkBuurIhguAG54UoL6AtqlBWrIdhQsCGHLV1fS+RISBPgCrplVkfLZQlJX9qfzZzDAed0Ioq9KYtb0UNxPnBj0aMu8UhYlsnXe4MLrzNbbGLDclsehOtAkMZ3IRn6uzYAj8LRAQG0z2tfO9VI11z5xcIMwPXq3MrQasLlAF4Q946EilYbLg/w8LIxZYla+eFEhjBxWfpiS+kcQbyHAYasqpfOkKD44DnyxX0SZQQNBlyk7w0cODCgYUguU8c8r4BfZ2EWJBIU2Axr+Y1eBsZg3z25X/mD54jxxecAFFhCApeaPuMtGwmiFVro0tv+R7c7eMBmqNNmUBdZ0pRU0PJzcRqqFtjePu1pSilrmBGrmke5SdBsqogbfTpM7Ygc3XQIYR+/tiKz4hCHHPXOvwpUsHAdwkDF42j7u5GEu9k6xs7uavu1QR83rg6FJrIy0pqKOuHMpfMass4y5HvbcnJ2xieA7hJrxmw3fH87h6pzDF4/hdPyIPpEuyYaEqa/TK4DDdYDRk+BUvnk+cfpavzZ7wyqY0tgz7M6g4YRhmjdWsAACjS4Qut2oVG4lh8fg9eRrD++Lh/BZE9qYInGs3j8yQ0VyxO0MjtJVxg8usXNFT6kJkBlSNLE8aiFm9rf+ZNgy8qS+XDnLL5erYyWMVk/HgVuq/PRNCbEnR/NwTO3SM2nqAV4uATMsWxR5r8huNLcy3XrcLtpD6/G4wXruQTl1/PVG7D7BuB+ZLjhNlDC+3sjmENeaB+xt7CrcYdisA5N/R/SGFk7SiqTAwAAAABJRU5ErkJggg=="
-                title="logo"
-              />
-              <CardMedia
-                className={classes.media}
-                image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbsAAABkCAQAAAC1f1bbAAAEYUlEQVR42u3dbZXiQBCF4UhAAhIiAQlIiAQkICESIgEJkRAJIwEHWTj7Z/ewMwv9eavq7fo/C5V+djjUne5hHyjhOuy3fS1U6u913Vut+z72fa+Wm/e6VnfsbgW7A7s/4U2wg92/aynaHdj9vSbYwa42OtgJwYOdak3FuwO717XADnY10cFOCB7soqCD3ffwDrCD3fj4ng12LdfWGh7soqCDnRA82EVBB7uf11fLETrstDIpW8XuwE4muzIUf2iw00QHOyF4sNOprXJ3YCczQoed10wK7IThwS4KOti9v66wi8BubtId2MlkV2DnNZMCO2F4sIuCDnaf76YD7HyyOzXsDuxksiuw85pJgV0ZeEfY+WKXim5+fNOWUkPYygkiVBmhl2c3Pj449arR1FZIQzcF5uMG3uDmI0qMbXChd8kdXzLgnWEXF91C77qFEibYWa8b6GLDg52VR7/Sue5z0gV2sdBt7c/7AF49BbBrWxfQScC7w47/Z//3PRroVGamsAuDbqR3MvBgF+Ixg65eHRPGOLAL8aEmbUx74qlWmp/CLgC61EkR7GrBg537TEr6eBZ2tUY6sHOObs74N2FXCx7sjFSP9CXsxPsFO8VMymJtG8EOdgTBYAe7sDV3Qgc72JFJ6ZC+hB3sQNc8kwI72AWsc+f0JexgRyblzTXa3Uawg12sIBjsYEcmReIYPtjBjiBY82P4YAc70DU/EQx2sAtTqwg62MGOINiP6+ZjG8EOdnbQ1ToRTJ3dJfHylJyCnbtSO4ZPm12Le9rF9y/s+gXBDn4+NMmjgx3oqp8IpsuuFzrYOcuk6KHTZdcPHewIgj1YDAHZ9UQHO9KX/r4Ql0dnlh2nE5fJpEwNXpseu97ozLLj1uwS6OYmr06NXX90htkBTy99aYGdAjrT7LiyPmcjLc1enxK7y77DLpcdN2inB8GGkOyusCvBLjo8C/exws4hu+f19XHvF73Ko4OdU3aRb9P+fBu1vxoSdk7ZxYV3lUcHOwPstuQ3EvOC36uBHsFOnt0BeBW3UZ9JJ+zk2T3h3TLgnWEnFy+AnQF2uUmCCXZifYGdEXbAK72Nto6v0SK7r45nqXRklxfjmWH3MtuEnZV+dWWXekBBrOwK7GBXmN0T3h14sINdW3bpfzMdZYQOO9hVYAc82MGuA7snvC0D3gg72MHuc3ZkV2AHuw7sgAc72HVglzdCvz8mee2vl5jYRrCzz07l+Jld6NHBDnbV2Q2P31pe2L1/7eMJdqH6VaY+6Nc7P26CHexg15qdHXiwg50jds8HeYcd7GDXll1edgV2sINdEjsL8GAHO3fs8kbosIMd7JLYqcODHexcsnvCW2EHO9i1ZaecXYEd7ByzU4UHO9i5ZqdzbxnsYBeInWJ2BXawc89ODx7sYBeAndoIHXawC8FOCx7sYBeEXd6BR7CDHewSSyW7AjvYBWL3+7KutXvNDbbRSehcl+/qWORCDtjJs3PWln2g6Fe9fv0C2rPD9wPXJSYAAAAASUVORK5CYII="
-                title="logo"
-              />
-            </div>{" "}
+              <svg viewBox="0 0 251 49">
+                <g id="Layer_1" data-name="Layer 1">
+                  <path
+                    style={{ fill: "#ff9e18" }}
+                    d="M238.66 23.11h10.23l-1.79-4.68-4.26-.35 1.18-7.8-2.28-6.01-3.08 18.84z"
+                  />
+                  <path
+                    style={{ fill: "#8c837b" }}
+                    d="M238.37 2.93l-3.85-1.8 2.55 12.06 1.3-10.26zM234.06 48.96l4.17-1.86-1.13-10.49-3.04 12.35z"
+                  />
+                  <path
+                    style={{ fill: "#ff9e18" }}
+                    d="M229.95.33l-3.78 6.09 3.61 11.19-9.69-1.11-4 6.61h20.51L229.95.33z"
+                  />
+                  <path
+                    style={{ fill: "#e1251b" }}
+                    d="M238.78 26.24h10.23l-1.79 4.68-4.26.36 1.18 7.79-2.29 6.01-3.07-18.84zM230.07 48.95l-3.57-5.78 3.4-11.5-10.58-.13-3.11-5.38 20.51.01-6.65 22.78z"
+                  />
+                  <path
+                    style={{ fill: "#ff9e18" }}
+                    d="M249.05 10.68a.33.33 0 0 0 .34-.35.32.32 0 0 0-.34-.34h-.33v.69zm-.72-1h.8a.6.6 0 0 1 .65.63.54.54 0 0 1-.38.54.27.27 0 0 1 .07.11l.4.76h-.43l-.38-.8h-.34v.8h-.39zm.67 2.66a1.63 1.63 0 0 0 0-3.25 1.56 1.56 0 0 0-1.54 1.63 1.56 1.56 0 0 0 1.54 1.64m0-3.62a2 2 0 1 1-1.94 2 2 2 0 0 1 1.94-2"
+                  />
+                </g>
+                <path
+                  style={
+                    this.state.open === true
+                      ? { opacity: "1" }
+                      : { opacity: "0" }
+                  }
+                  d="M19.75 32.11l-1.63-1.59c-2.09 2-4.06 3.16-7.06 3.16-4.82 0-8.47-4-8.47-9.07s3.62-9 8.47-9a9.53 9.53 0 0 1 6.88 3l1.68-1.82a11.39 11.39 0 0 0-8.53-3.47A11 11 0 0 0 0 24.67 10.93 10.93 0 0 0 11 36a11.4 11.4 0 0 0 8.75-3.85m4.51 3.47h2.47V13.7h-2.47zm27 0l-6.72-8.94c3.44-.62 5.94-2.75 5.94-6.41 0-3.94-3.09-6.53-7.91-6.53h-9.44v21.84h2.47v-8.5h6.25l6.35 8.5zM48 20.33c0 2.84-2.34 4.53-5.62 4.53H35.6V16h6.75c3.54 0 5.6 1.63 5.6 4.35M73 32.11l-1.62-1.59c-2.1 2-4.07 3.16-7.07 3.16-4.81 0-8.47-4-8.47-9.07s3.63-9 8.47-9a9.53 9.53 0 0 1 6.88 3l1.69-1.82a11.42 11.42 0 0 0-8.54-3.47 11 11 0 0 0-11.06 11.35A10.92 10.92 0 0 0 64.25 36 11.4 11.4 0 0 0 73 32.11m13.73-18.57h-2.31l-10 22H77l2.59-5.78h11.89L94 35.58h2.7zm3.78 14h-10l5-11.16zm28.68-3c0-6.19-4.75-10.91-11.63-10.91H100v21.95h7.6c6.88 0 11.63-4.78 11.63-11m-2.57.06c0 4.88-3.53 8.63-9.06 8.63h-5.13V16h5.13c5.53 0 9.06 3.82 9.06 8.69m22.65-11h-15.85v21.89h16v-2.25h-13.5v-7.66h11.94v-2.25h-11.97V16h13.34zm21.08 17.54L146.57 13.7h-2.32v21.88h2.41V17.64l14.13 17.94h2V13.7h-2.41zm26.38.87l-1.63-1.59c-2.09 2-4.06 3.16-7.06 3.16-4.82 0-8.48-4-8.48-9.07s3.63-9 8.48-9a9.49 9.49 0 0 1 6.87 3l1.69-1.82a11.39 11.39 0 0 0-8.53-3.47A11 11 0 0 0 167 24.67 10.93 10.93 0 0 0 178 36a11.42 11.42 0 0 0 8.75-3.85m20.07-18.45H191v21.88h16v-2.25h-13.5v-7.66h11.94v-2.25h-11.97V16h13.35z"
+                  id="Layer_2"
+                  data-name="Layer 2"
+                />
+              </svg>
+            </div>
             <Divider />
             <List className={classes.menulist}>
               <ListItem
